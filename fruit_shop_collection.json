@@ -1,0 +1,4860 @@
+{
+	"info": {
+		"_postman_id": "3dc0ae7f-df86-400b-be8a-1e4b3db10d27",
+		"name": "Fruit Shop API",
+		"description": "![Logo](https://www.predic8.de/logo6.png)\n\nShowcases REST API design and serves as a public API for\neducational usage. Feel free to use this API even by using the POST, PUT and DELETE methods. You\ncannot do any harm, the API will be reset automatically.\n\n\nContact Support:\n Name: Predic8\n Email: info@predic8.de",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28174340",
+		"_collection_link": "https://www.postman.com/nauber/workspace/api-week-3/collection/28174340-3dc0ae7f-df86-400b-be8a-1e4b3db10d27?action=share&source=collection_link&creator=28174340"
+	},
+	"item": [
+		{
+			"name": "/",
+			"item": [
+				{
+					"name": "Get an overview of the api",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								""
+							]
+						},
+						"description": "Shows the paths for Products, Vendors, Orders, Customers and the oas3"
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"example\": {\n    \"description\": {\n      \"openapi\": \"/shop/v2/api-docs\",\n      \"swagger_ui\": \"/shop/v2/swagger-ui\"\n    },\n    \"link\": {\n      \"products_link\": \"/shop/v2/products\",\n      \"vendors_link\": \"/shop/v2/vendors\",\n      \"orders_link\": \"/shop/v2/orders\",\n      \"customer_link\": \"/shop/v2/customers\"\n    }\n  }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "api-docs",
+			"item": [
+				{
+					"name": "Get OpenAPI documentation",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/yaml"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/api-docs",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api-docs"
+							]
+						},
+						"description": "Get the OpenAPI documentation in YAML format."
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/yaml"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/api-docs",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api-docs"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/yaml"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"example\": \"\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "swagger-ui",
+			"item": [
+				{
+					"name": "Open Swagger UI",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/swagger-ui",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"swagger-ui"
+							]
+						},
+						"description": "Open the Swagger UI for interactive API documentation."
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/swagger-ui",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"swagger-ui"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "image",
+							"item": [
+								{
+									"name": "Get image",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "image/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:id/image",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id",
+												"image"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) Id of the object"
+												}
+											]
+										},
+										"description": "Get image of the product"
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "image/*"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/products/:id/image",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"products",
+														":id",
+														"image"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "image/*"
+												}
+											],
+											"cookie": [],
+											"body": "<string>"
+										},
+										{
+											"name": "Client Error",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/products/:id/image",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"products",
+														":id",
+														"image"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+										},
+										{
+											"name": "Server Error",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/products/:id/image",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"products",
+														":id",
+														"image"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Upload image",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "multipart/form-data"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "0",
+													"value": "<",
+													"type": "text"
+												},
+												{
+													"key": "1",
+													"value": "s",
+													"type": "text"
+												},
+												{
+													"key": "2",
+													"value": "t",
+													"type": "text"
+												},
+												{
+													"key": "3",
+													"value": "r",
+													"type": "text"
+												},
+												{
+													"key": "4",
+													"value": "i",
+													"type": "text"
+												},
+												{
+													"key": "5",
+													"value": "n",
+													"type": "text"
+												},
+												{
+													"key": "6",
+													"value": "g",
+													"type": "text"
+												},
+												{
+													"key": "7",
+													"value": ">",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl}}/products/:id/image",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id",
+												"image"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) Id of the object"
+												}
+											]
+										},
+										"description": "Upload image for the product"
+									},
+									"response": [
+										{
+											"name": "Ok",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "multipart/form-data"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "0",
+															"value": "<",
+															"type": "text"
+														},
+														{
+															"key": "1",
+															"value": "s",
+															"type": "text"
+														},
+														{
+															"key": "2",
+															"value": "t",
+															"type": "text"
+														},
+														{
+															"key": "3",
+															"value": "r",
+															"type": "text"
+														},
+														{
+															"key": "4",
+															"value": "i",
+															"type": "text"
+														},
+														{
+															"key": "5",
+															"value": "n",
+															"type": "text"
+														},
+														{
+															"key": "6",
+															"value": "g",
+															"type": "text"
+														},
+														{
+															"key": "7",
+															"value": ">",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{baseUrl}}/products/:id/image",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"products",
+														":id",
+														"image"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"body": ""
+										},
+										{
+											"name": "Client Error",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "multipart/form-data"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "0",
+															"value": "<",
+															"type": "text"
+														},
+														{
+															"key": "1",
+															"value": "s",
+															"type": "text"
+														},
+														{
+															"key": "2",
+															"value": "t",
+															"type": "text"
+														},
+														{
+															"key": "3",
+															"value": "r",
+															"type": "text"
+														},
+														{
+															"key": "4",
+															"value": "i",
+															"type": "text"
+														},
+														{
+															"key": "5",
+															"value": "n",
+															"type": "text"
+														},
+														{
+															"key": "6",
+															"value": "g",
+															"type": "text"
+														},
+														{
+															"key": "7",
+															"value": ">",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{baseUrl}}/products/:id/image",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"products",
+														":id",
+														"image"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+										},
+										{
+											"name": "Server Error",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "multipart/form-data"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "formdata",
+													"formdata": [
+														{
+															"key": "0",
+															"value": "<",
+															"type": "text"
+														},
+														{
+															"key": "1",
+															"value": "s",
+															"type": "text"
+														},
+														{
+															"key": "2",
+															"value": "t",
+															"type": "text"
+														},
+														{
+															"key": "3",
+															"value": "r",
+															"type": "text"
+														},
+														{
+															"key": "4",
+															"value": "i",
+															"type": "text"
+														},
+														{
+															"key": "5",
+															"value": "n",
+															"type": "text"
+														},
+														{
+															"key": "6",
+															"value": "g",
+															"type": "text"
+														},
+														{
+															"key": "7",
+															"value": ">",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "{{baseUrl}}/products/:id/image",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"products",
+														":id",
+														"image"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Get product by id - 200",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Produto encontrado\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.id).to.eql(01);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products/01",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"01"
+									]
+								},
+								"description": "Get detailed information about the product."
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"name\": \"<string>\",\n  \"price\": \"<number>\",\n  \"id\": \"<integer>\",\n  \"vendors\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    }\n  ],\n  \"image_link\": \"<string>\",\n  \"self_link\": \"<string>\"\n}"
+								},
+								{
+									"name": "Client Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+								},
+								{
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get product by id - 404",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"    pm.response.to.have.status(404);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Produto inexistente\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.title).to.eql(\"Not Found\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products/1151",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"1151"
+									]
+								},
+								"description": "Get detailed information about the product."
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"name\": \"<string>\",\n  \"price\": \"<number>\",\n  \"id\": \"<integer>\",\n  \"vendors\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    }\n  ],\n  \"image_link\": \"<string>\",\n  \"self_link\": \"<string>\"\n}"
+								},
+								{
+									"name": "Client Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+								},
+								{
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Get product by id - 400",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Produto inválido\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.error).to.eql(\"Bad Request\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products/a",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"a"
+									]
+								},
+								"description": "Get detailed information about the product."
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"name\": \"<string>\",\n  \"price\": \"<number>\",\n  \"id\": \"<integer>\",\n  \"vendors\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    }\n  ],\n  \"image_link\": \"<string>\",\n  \"self_link\": \"<string>\"\n}"
+								},
+								{
+									"name": "Client Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+								},
+								{
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update a product - 200",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"Manganauber,\",\n  \"price\": 5.79\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products/01",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"01"
+									]
+								},
+								"description": "Update a product description with new data."
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"price\": \"<number>\",\n  \"id\": \"<integer>\",\n  \"vendors\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    }\n  ],\n  \"image_link\": \"<string>\",\n  \"self_link\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"name\": \"<string>\",\n  \"price\": \"<number>\",\n  \"id\": \"<integer>\",\n  \"vendors\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    }\n  ],\n  \"image_link\": \"<string>\",\n  \"self_link\": \"<string>\"\n}"
+								},
+								{
+									"name": "Client Error",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"price\": \"<number>\",\n  \"id\": \"<integer>\",\n  \"vendors\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    }\n  ],\n  \"image_link\": \"<string>\",\n  \"self_link\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+								},
+								{
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"price\": \"<number>\",\n  \"id\": \"<integer>\",\n  \"vendors\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    }\n  ],\n  \"image_link\": \"<string>\",\n  \"self_link\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update a product - 400",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Produto inválido\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.error).to.eql(\"Bad Request\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"price\": \"<number>\",\n  \"id\": \"<integer>\",\n  \"vendors\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    }\n  ],\n  \"image_link\": \"<string>\",\n  \"self_link\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products/a",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"a"
+									]
+								},
+								"description": "Update a product description with new data."
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"price\": \"<number>\",\n  \"id\": \"<integer>\",\n  \"vendors\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    }\n  ],\n  \"image_link\": \"<string>\",\n  \"self_link\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"name\": \"<string>\",\n  \"price\": \"<number>\",\n  \"id\": \"<integer>\",\n  \"vendors\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    }\n  ],\n  \"image_link\": \"<string>\",\n  \"self_link\": \"<string>\"\n}"
+								},
+								{
+									"name": "Client Error",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"price\": \"<number>\",\n  \"id\": \"<integer>\",\n  \"vendors\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    }\n  ],\n  \"image_link\": \"<string>\",\n  \"self_link\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+								},
+								{
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"price\": \"<number>\",\n  \"id\": \"<integer>\",\n  \"vendors\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    }\n  ],\n  \"image_link\": \"<string>\",\n  \"self_link\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete a product - 404",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 404\", function () {\r",
+											"    pm.response.to.have.status(404);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Produto inexistente\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.title).to.eql(\"Not Found\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products/1151",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"1151"
+									]
+								},
+								"description": "Delete a single product."
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<string>\"\n}"
+								},
+								{
+									"name": "Client Error",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+								},
+								{
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Delete a product - 400",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Produto inválido\", function () {\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData.error).to.eql(\"Bad Request\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products/a",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"a"
+									]
+								},
+								"description": "Delete a single product."
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"success\": \"<string>\"\n}"
+								},
+								{
+									"name": "Client Error",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+								},
+								{
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update properties of a product",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"price\": \"<number>\",\n  \"vendor\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<integer>",
+											"description": "(Required) Id of the object"
+										}
+									]
+								},
+								"description": "Update one or more properties of a product"
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"price\": \"<number>\",\n  \"vendor\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"name\": \"<string>\",\n  \"price\": \"<number>\",\n  \"id\": \"<integer>\",\n  \"vendors\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    }\n  ],\n  \"image_link\": \"<string>\",\n  \"self_link\": \"<string>\"\n}"
+								},
+								{
+									"name": "Client Error",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"price\": \"<number>\",\n  \"vendor\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+								},
+								{
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"price\": \"<number>\",\n  \"vendor\": \"<integer>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/products/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "{{baseUrl}}/products/13",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products/13",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"13"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Get all products",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/products?start=7&limit=100",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "7",
+									"description": "Starting entry of the result list"
+								},
+								{
+									"key": "limit",
+									"value": "100",
+									"description": "Limits the number of result entries"
+								}
+							]
+						},
+						"description": "Get a list of all the products available over the Fruitshop API."
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products?start=1&limit=10&search=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products"
+									],
+									"query": [
+										{
+											"key": "start",
+											"value": "1",
+											"description": "Starting entry of the result list"
+										},
+										{
+											"key": "limit",
+											"value": "10",
+											"description": "Limits the number of result entries"
+										},
+										{
+											"key": "search",
+											"value": "<string>",
+											"description": "Search for products containing this String"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"meta\": {\n    \"count\": \"<integer>\",\n    \"start\": \"<integer>\",\n    \"limit\": \"<integer>\",\n    \"previous_link\": \"<string>\",\n    \"next_link\": \"<string>\"\n  },\n  \"products\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    }\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create a product 500",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 500\", function () {\r",
+									"    pm.response.to.have.status(500);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/products",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products"
+							]
+						},
+						"description": "Create a new product for the store."
+					},
+					"response": [
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"price\": \"<number>\",\n  \"id\": \"<integer>\",\n  \"vendors\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    }\n  ],\n  \"image_link\": \"<string>\",\n  \"self_link\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "location",
+									"value": "<uri>",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"name\": \"<string>\",\n  \"price\": \"<number>\",\n  \"id\": \"<integer>\",\n  \"vendors\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    }\n  ],\n  \"image_link\": \"<string>\",\n  \"self_link\": \"<string>\"\n}"
+						},
+						{
+							"name": "Server Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"price\": \"<number>\",\n  \"id\": \"<integer>\",\n  \"vendors\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    }\n  ],\n  \"image_link\": \"<string>\",\n  \"self_link\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Create a product 400",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 400\", function () {\r",
+									"    pm.response.to.have.status(400);\r",
+									"});\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/products/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								""
+							]
+						},
+						"description": "Create a new product for the store."
+					},
+					"response": [
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"price\": \"<number>\",\n  \"id\": \"<integer>\",\n  \"vendors\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    }\n  ],\n  \"image_link\": \"<string>\",\n  \"self_link\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "location",
+									"value": "<uri>",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"name\": \"<string>\",\n  \"price\": \"<number>\",\n  \"id\": \"<integer>\",\n  \"vendors\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    }\n  ],\n  \"image_link\": \"<string>\",\n  \"self_link\": \"<string>\"\n}"
+						},
+						{
+							"name": "Server Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"price\": \"<number>\",\n  \"id\": \"<integer>\",\n  \"vendors\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    }\n  ],\n  \"image_link\": \"<string>\",\n  \"self_link\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "vendors",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "products",
+							"item": [
+								{
+									"name": "{pid}",
+									"item": [
+										{
+											"name": "Add a product to a vendor",
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/vendors/:id/products/:pid",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"vendors",
+														":id",
+														"products",
+														":pid"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<integer>",
+															"description": "(Required) Id of the object"
+														},
+														{
+															"key": "pid",
+															"value": "<integer>",
+															"description": "(Required) The id of the product to add"
+														}
+													]
+												},
+												"description": "Extend the list of products a vendor sells with the **Fruitshop API**."
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/vendors/:id/products/:pid",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"vendors",
+																":id",
+																"products",
+																":pid"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																},
+																{
+																	"key": "pid"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"success\": \"<string>\"\n}"
+												},
+												{
+													"name": "Client Error",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/vendors/:id/products/:pid",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"vendors",
+																":id",
+																"products",
+																":pid"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																},
+																{
+																	"key": "pid"
+																}
+															]
+														}
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+												},
+												{
+													"name": "Server Error",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/vendors/:id/products/:pid",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"vendors",
+																":id",
+																"products",
+																":pid"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																},
+																{
+																	"key": "pid"
+																}
+															]
+														}
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "Get products",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/vendors/:id/products?start=1&limit=10",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"vendors",
+												":id",
+												"products"
+											],
+											"query": [
+												{
+													"key": "start",
+													"value": "1",
+													"description": "Starting entry of the result list"
+												},
+												{
+													"key": "limit",
+													"value": "10",
+													"description": "Limits the number of result entries"
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) Id of the object"
+												}
+											]
+										},
+										"description": "Get the products offered by this vendor"
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/vendors/:id/products?start=1&limit=10",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"vendors",
+														":id",
+														"products"
+													],
+													"query": [
+														{
+															"key": "start",
+															"value": "1",
+															"description": "Starting entry of the result list"
+														},
+														{
+															"key": "limit",
+															"value": "10",
+															"description": "Limits the number of result entries"
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"meta\": {\n    \"count\": \"<integer>\",\n    \"start\": \"<integer>\",\n    \"limit\": \"<integer>\",\n    \"previous_link\": \"<string>\",\n    \"next_link\": \"<string>\"\n  },\n  \"products\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    }\n  ]\n}"
+										},
+										{
+											"name": "Client Error",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/vendors/:id/products?start=1&limit=10",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"vendors",
+														":id",
+														"products"
+													],
+													"query": [
+														{
+															"key": "start",
+															"value": "1",
+															"description": "Starting entry of the result list"
+														},
+														{
+															"key": "limit",
+															"value": "10",
+															"description": "Limits the number of result entries"
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+										},
+										{
+											"name": "Server Error",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/vendors/:id/products?start=1&limit=10",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"vendors",
+														":id",
+														"products"
+													],
+													"query": [
+														{
+															"key": "start",
+															"value": "1",
+															"description": "Starting entry of the result list"
+														},
+														{
+															"key": "limit",
+															"value": "10",
+															"description": "Limits the number of result entries"
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Get a vendor by id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/vendors/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"vendors",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<integer>",
+											"description": "(Required) Id of the object"
+										}
+									]
+								},
+								"description": "Get detailed information about the vendor."
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/vendors/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"vendors",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"name\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"products_link\": \"<string>\",\n  \"self_link\": \"<string>\"\n}"
+								},
+								{
+									"name": "Client Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/vendors/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"vendors",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+								},
+								{
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/vendors/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"vendors",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "Update a vendor",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"products_link\": \"<string>\",\n  \"self_link\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/vendors/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"vendors",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<integer>",
+											"description": "(Required) Id of the object"
+										}
+									]
+								},
+								"description": "Update a vendor description with new data."
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"products_link\": \"<string>\",\n  \"self_link\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/vendors/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"vendors",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"name\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"products_link\": \"<string>\",\n  \"self_link\": \"<string>\"\n}"
+								},
+								{
+									"name": "Client Error",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"products_link\": \"<string>\",\n  \"self_link\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/vendors/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"vendors",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+								},
+								{
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"products_link\": \"<string>\",\n  \"self_link\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/vendors/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"vendors",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get all vendors",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/vendors?start=1&limit=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"vendors"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "1",
+									"description": "Starting entry of the result list"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "Limits the number of result entries"
+								}
+							]
+						},
+						"description": "Get a list of all the vendors registered the Fruitshop API."
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/vendors?start=1&limit=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"vendors"
+									],
+									"query": [
+										{
+											"key": "start",
+											"value": "1",
+											"description": "Starting entry of the result list"
+										},
+										{
+											"key": "limit",
+											"value": "10",
+											"description": "Limits the number of result entries"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"meta\": {\n    \"count\": \"<integer>\",\n    \"start\": \"<integer>\",\n    \"limit\": \"<integer>\",\n    \"previous_link\": \"<string>\",\n    \"next_link\": \"<string>\"\n  },\n  \"vendors\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    }\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Create a vendor",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"products_link\": \"<string>\",\n  \"self_link\": \"<string>\"\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/vendors",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"vendors"
+							]
+						},
+						"description": "Register a new vendor offering products with the **Fruitshop API**."
+					},
+					"response": [
+						{
+							"name": "Created",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"products_link\": \"<string>\",\n  \"self_link\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/vendors",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"vendors"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "location",
+									"value": "<uri>",
+									"description": {
+										"content": "",
+										"type": "text/plain"
+									}
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"name\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"products_link\": \"<string>\",\n  \"self_link\": \"<string>\"\n}"
+						},
+						{
+							"name": "Server Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"id\": \"<integer>\",\n  \"products_link\": \"<string>\",\n  \"self_link\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/vendors",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"vendors"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "items",
+							"item": [
+								{
+									"name": "Get the items",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/orders/:id/items",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"orders",
+												":id",
+												"items"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) Id of the object"
+												}
+											]
+										},
+										"description": "Get the items of an order"
+									},
+									"response": [
+										{
+											"name": "List of items",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/orders/:id/items",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"orders",
+														":id",
+														"items"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"items\": [\n    {\n      \"quantity\": \"<number>\",\n      \"product\": \"<integer>\",\n      \"price\": \"<number>\",\n      \"product_link\": \"<string>\"\n    },\n    {\n      \"quantity\": \"<number>\",\n      \"product\": \"<integer>\",\n      \"price\": \"<number>\",\n      \"product_link\": \"<string>\"\n    }\n  ],\n  \"order_link\": \"<string>\"\n}"
+										},
+										{
+											"name": "Client Error",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/orders/:id/items",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"orders",
+														":id",
+														"items"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+										},
+										{
+											"name": "Server Error",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/orders/:id/items",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"orders",
+														":id",
+														"items"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "actions",
+							"item": [
+								{
+									"name": "purchase",
+									"item": [
+										{
+											"name": "Purchase an order",
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/orders/:id/actions/purchase",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"orders",
+														":id",
+														"actions",
+														"purchase"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<integer>",
+															"description": "(Required) Id of the object"
+														}
+													]
+												},
+												"description": "Purchase an order that was in the created state."
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/orders/:id/actions/purchase",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"orders",
+																":id",
+																"actions",
+																"purchase"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"actions\": {\n    \"purchase\": {\n      \"link\": \"<string>\",\n      \"method\": \"PUT\"\n    },\n    \"cancel\": {\n      \"link\": \"<string>\",\n      \"method\": \"PUT\"\n    }\n  },\n  \"id\": \"<integer>\",\n  \"state\": \"DELIVERED\",\n  \"customer\": \"<integer>\",\n  \"customer_link\": \"<string>\",\n  \"items_link\": \"<string>\",\n  \"total\": \"<number>\",\n  \"createdAt\": \"<string>\",\n  \"updatedAt\": \"<string>\"\n}"
+												},
+												{
+													"name": "Client Error",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/orders/:id/actions/purchase",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"orders",
+																":id",
+																"actions",
+																"purchase"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+												},
+												{
+													"name": "Server Error",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/orders/:id/actions/purchase",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"orders",
+																":id",
+																"actions",
+																"purchase"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "cancel",
+									"item": [
+										{
+											"name": "Cancel",
+											"request": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/orders/:id/actions/cancel",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"orders",
+														":id",
+														"actions",
+														"cancel"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "<integer>",
+															"description": "(Required) Id of the object"
+														}
+													]
+												},
+												"description": "Cancel an order"
+											},
+											"response": [
+												{
+													"name": "OK",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/orders/:id/actions/cancel",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"orders",
+																":id",
+																"actions",
+																"cancel"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"actions\": {\n    \"purchase\": {\n      \"link\": \"<string>\",\n      \"method\": \"PUT\"\n    },\n    \"cancel\": {\n      \"link\": \"<string>\",\n      \"method\": \"PUT\"\n    }\n  },\n  \"id\": \"<integer>\",\n  \"state\": \"DELIVERED\",\n  \"customer\": \"<integer>\",\n  \"customer_link\": \"<string>\",\n  \"items_link\": \"<string>\",\n  \"total\": \"<number>\",\n  \"createdAt\": \"<string>\",\n  \"updatedAt\": \"<string>\"\n}"
+												},
+												{
+													"name": "Client Error",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/orders/:id/actions/cancel",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"orders",
+																":id",
+																"actions",
+																"cancel"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+												},
+												{
+													"name": "Server Error",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Accept",
+																"value": "application/json"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/orders/:id/actions/cancel",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"orders",
+																":id",
+																"actions",
+																"cancel"
+															],
+															"variable": [
+																{
+																	"key": "id"
+																}
+															]
+														}
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "json",
+													"header": [
+														{
+															"key": "Content-Type",
+															"value": "application/json"
+														}
+													],
+													"cookie": [],
+													"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Get an order by id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/orders/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"orders",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<integer>",
+											"description": "(Required) Id of the object"
+										}
+									]
+								},
+								"description": "Get detailed information about the order."
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/orders/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"orders",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"actions\": {\n    \"purchase\": {\n      \"link\": \"<string>\",\n      \"method\": \"PUT\"\n    },\n    \"cancel\": {\n      \"link\": \"<string>\",\n      \"method\": \"PUT\"\n    }\n  },\n  \"id\": \"<integer>\",\n  \"state\": \"DELIVERED\",\n  \"customer\": \"<integer>\",\n  \"customer_link\": \"<string>\",\n  \"items_link\": \"<string>\",\n  \"total\": \"<number>\",\n  \"createdAt\": \"<string>\",\n  \"updatedAt\": \"<string>\"\n}"
+								},
+								{
+									"name": "Client Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/orders/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"orders",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+								},
+								{
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/orders/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"orders",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get all orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/orders?start=1&limit=10&state=CREATED",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "1",
+									"description": "Starting entry of the result list"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "Limits the number of result entries"
+								},
+								{
+									"key": "state",
+									"value": "CREATED",
+									"description": "State of an order"
+								}
+							]
+						},
+						"description": "Get a list of all the orders the **Fruitshop API** processed."
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/orders?start=1&limit=10&state=CREATED",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"orders"
+									],
+									"query": [
+										{
+											"key": "start",
+											"value": "1",
+											"description": "Starting entry of the result list"
+										},
+										{
+											"key": "limit",
+											"value": "10",
+											"description": "Limits the number of result entries"
+										},
+										{
+											"key": "state",
+											"value": "CREATED",
+											"description": "State of an order"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"meta\": {\n    \"count\": \"<integer>\",\n    \"start\": \"<integer>\",\n    \"limit\": \"<integer>\",\n    \"previous_link\": \"<string>\",\n    \"next_link\": \"<string>\"\n  },\n  \"orders\": [\n    {\n      \"id\": \"<integer>\",\n      \"state\": \"CANCELED\",\n      \"self_link\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"state\": \"CREATED\",\n      \"self_link\": \"<string>\"\n    }\n  ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "customers",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "orders",
+							"item": [
+								{
+									"name": "Get the orders",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/customers/:id/orders?start=1&limit=10",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customers",
+												":id",
+												"orders"
+											],
+											"query": [
+												{
+													"key": "start",
+													"value": "1",
+													"description": "Starting entry of the result list"
+												},
+												{
+													"key": "limit",
+													"value": "10",
+													"description": "Limits the number of result entries"
+												}
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) Id of the object"
+												}
+											]
+										},
+										"description": "Get the orders of a customer"
+									},
+									"response": [
+										{
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/customers/:id/orders?start=1&limit=10",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"customers",
+														":id",
+														"orders"
+													],
+													"query": [
+														{
+															"key": "start",
+															"value": "1",
+															"description": "Starting entry of the result list"
+														},
+														{
+															"key": "limit",
+															"value": "10",
+															"description": "Limits the number of result entries"
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"meta\": {\n    \"count\": \"<integer>\",\n    \"start\": \"<integer>\",\n    \"limit\": \"<integer>\",\n    \"previous_link\": \"<string>\",\n    \"next_link\": \"<string>\"\n  },\n  \"orders\": [\n    {\n      \"id\": \"<integer>\",\n      \"state\": \"CANCELED\",\n      \"self_link\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"state\": \"CREATED\",\n      \"self_link\": \"<string>\"\n    }\n  ]\n}"
+										},
+										{
+											"name": "Client Error",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/customers/:id/orders?start=1&limit=10",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"customers",
+														":id",
+														"orders"
+													],
+													"query": [
+														{
+															"key": "start",
+															"value": "1",
+															"description": "Starting entry of the result list"
+														},
+														{
+															"key": "limit",
+															"value": "10",
+															"description": "Limits the number of result entries"
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+										},
+										{
+											"name": "Server Error",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/customers/:id/orders?start=1&limit=10",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"customers",
+														":id",
+														"orders"
+													],
+													"query": [
+														{
+															"key": "start",
+															"value": "1",
+															"description": "Starting entry of the result list"
+														},
+														{
+															"key": "limit",
+															"value": "10",
+															"description": "Limits the number of result entries"
+														}
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+										}
+									]
+								},
+								{
+									"name": "Create an order for a customer",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"items\": [\n    {\n      \"quantity\": \"<number>\",\n      \"product\": \"<integer>\",\n      \"price\": \"<number>\",\n      \"product_link\": \"<string>\"\n    },\n    {\n      \"quantity\": \"<number>\",\n      \"product\": \"<integer>\",\n      \"price\": \"<number>\",\n      \"product_link\": \"<string>\"\n    }\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/customers/:id/orders",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customers",
+												":id",
+												"orders"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<integer>",
+													"description": "(Required) Id of the object"
+												}
+											]
+										},
+										"description": "Create a new order for the customer."
+									},
+									"response": [
+										{
+											"name": "Created",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"items\": [\n    {\n      \"quantity\": \"<number>\",\n      \"product\": \"<integer>\",\n      \"price\": \"<number>\",\n      \"product_link\": \"<string>\"\n    },\n    {\n      \"quantity\": \"<number>\",\n      \"product\": \"<integer>\",\n      \"price\": \"<number>\",\n      \"product_link\": \"<string>\"\n    }\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/customers/:id/orders",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"customers",
+														":id",
+														"orders"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"key": "location",
+													"value": "<uri>",
+													"description": {
+														"content": "",
+														"type": "text/plain"
+													}
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"actions\": {\n    \"purchase\": {\n      \"link\": \"<string>\",\n      \"method\": \"PUT\"\n    },\n    \"cancel\": {\n      \"link\": \"<string>\",\n      \"method\": \"PUT\"\n    }\n  },\n  \"id\": \"<integer>\",\n  \"state\": \"DELIVERED\",\n  \"customer\": \"<integer>\",\n  \"customer_link\": \"<string>\",\n  \"items_link\": \"<string>\",\n  \"total\": \"<number>\",\n  \"createdAt\": \"<string>\",\n  \"updatedAt\": \"<string>\"\n}"
+										},
+										{
+											"name": "Client Error",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"items\": [\n    {\n      \"quantity\": \"<number>\",\n      \"product\": \"<integer>\",\n      \"price\": \"<number>\",\n      \"product_link\": \"<string>\"\n    },\n    {\n      \"quantity\": \"<number>\",\n      \"product\": \"<integer>\",\n      \"price\": \"<number>\",\n      \"product_link\": \"<string>\"\n    }\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/customers/:id/orders",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"customers",
+														":id",
+														"orders"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+										},
+										{
+											"name": "Server Error",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"items\": [\n    {\n      \"quantity\": \"<number>\",\n      \"product\": \"<integer>\",\n      \"price\": \"<number>\",\n      \"product_link\": \"<string>\"\n    },\n    {\n      \"quantity\": \"<number>\",\n      \"product\": \"<integer>\",\n      \"price\": \"<number>\",\n      \"product_link\": \"<string>\"\n    }\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/customers/:id/orders",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"customers",
+														":id",
+														"orders"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Get a customer by id",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/customers/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<integer>",
+											"description": "(Required) Id of the object"
+										}
+									]
+								},
+								"description": "Get detailed information about the customer."
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/customers/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customers",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"firstname\": \"<string>\",\n  \"lastname\": \"<string>\",\n  \"orders_url\": \"<string>\",\n  \"customer_url\": \"<string>\"\n}"
+								},
+								{
+									"name": "Client Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/customers/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customers",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Bad Request",
+									"code": 400,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+								},
+								{
+									"name": "Server Error",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/customers/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"customers",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id"
+												}
+											]
+										}
+									},
+									"status": "Internal Server Error",
+									"code": 500,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"type\": \"<string>\",\n  \"title\": \"<string>\",\n  \"status\": \"<integer>\",\n  \"detail\": \"<string>\"\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get all customers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/customers?start=1&limit=10",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"customers"
+							],
+							"query": [
+								{
+									"key": "start",
+									"value": "1",
+									"description": "Starting entry of the result list"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "Limits the number of result entries"
+								}
+							]
+						},
+						"description": "Get a list of all the customers doing commerce with the Fruitshop API."
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/customers?start=1&limit=10",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"customers"
+									],
+									"query": [
+										{
+											"key": "start",
+											"value": "1",
+											"description": "Starting entry of the result list"
+										},
+										{
+											"key": "limit",
+											"value": "10",
+											"description": "Limits the number of result entries"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"meta\": {\n    \"count\": \"<integer>\",\n    \"start\": \"<integer>\",\n    \"limit\": \"<integer>\",\n    \"previous_link\": \"<string>\",\n    \"next_link\": \"<string>\"\n  },\n  \"customers\": [\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    },\n    {\n      \"id\": \"<integer>\",\n      \"name\": \"<string>\",\n      \"self_link\": \"<string>\"\n    }\n  ]\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://fruitshop2-predic8.azurewebsites.net/shop/v2"
+		}
+	]
+}
